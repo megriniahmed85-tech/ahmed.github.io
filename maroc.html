@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Découverte des Villes du Maroc</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #d89d9d;
+    }
+    .sidebar {
+      width: 220px;
+      background-color: #0c471ee7;
+      color: rgb(8, 3, 3);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h2 {
+      text-align: center;
+    }
+    .city-btn {
+      display: block;
+      background: none;
+      border: none;
+      color: rgb(230, 224, 224);
+      padding: 20px;
+      text-align: center ;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .city-btn:hover {
+      background-color: #db7f7f;
+    }
+    .content {
+      flex: 1;
+      padding: 30px;
+      text-align: center;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Maroc</h2>
+    <button class="city-btn" onclick="showCity('Rabat')">Rabat</button>
+    <button class="city-btn" onclick="showCity('Chefchaouen')">Chefchaouen</button>
+    <button class="city-btn" onclick="showCity('Merzouga')">Merzouga</button>
+    <button class="city-btn" onclick="showCity('Nador')">Nador</button>
+    <button class="city-btn" onclick="showCity('fes')">Fès</button>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Bienvenue au Maroc 🇲🇦</h1>
+    <img src="https://maroc-diplomatique.net/wp-content/uploads/2020/07/Sahara-1.jpg" alt="Maroc">
+    <p>Le Maroc est un pays d’Afrique du Nord situé entre l’océan Atlantique et la mer Méditerranée. Sa capitale est Rabat et sa plus grande ville est Casablanca. Il compte environ 38 millions d’habitants, principalement arabes et amazighs. Le pays est une monarchie dirigée par le roi Mohammed VI depuis 1999. Le Maroc possède une riche culture, connue pour sa cuisine, son artisanat et ses villes historiques comme Marrakech et Fès. Son économie repose sur l’agriculture, les phosphates, le tourisme, l’industrie et les énergies renouvelables. Le Maroc est aussi très présent dans le sport, surtout en football, avec une grande performance en Coupe du Monde 2022 et une future coorganisation de la Coupe du Monde 2030.</p>
+  </div>
+
+  <script>
+    function showCity(city) {
+      const content = document.getElementById("content");
+      const cityData = {
+        Rabat: {
+          name: "Rabat",
+          img: "https://static.wixstatic.com/media/3222c6_e77f21c91c094a19841f7f08340e5101~mv2.jpg/v1/fill/w_1110,h_624,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3222c6_e77f21c91c094a19841f7f08340e5101~mv2.jpg",
+          text: "Rabat est la capitale du Maroc, située sur la côte atlantique, à l’embouchure du fleuve Bouregreg. C’est une ville moderne et administrative, qui abrite les institutions politiques du pays, comme le Parlement et les ministères. Rabat est aussi riche en histoire, avec des sites célèbres comme la Tour Hassan, le Mausolée Mohammed V et la Kasbah des Oudayas. Elle combine modernité et tradition, avec de larges avenues, des jardins, une médina animée et des bâtiments coloniaux. Rabat est également une ville culturelle, accueillant des festivals et des musées. En 2012, sa médina et plusieurs sites historiques ont été classés patrimoine mondial de l’UNESCO.."
+        },
+        Chefchaouen: {
+          name: "Chefchaouen",
+          img: "https://res.klook.com/image/upload/w_1265,h_785,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/lwaqdg829mzcarqyrzbb.webp",
+          text: "Chefchaouen, surnommée la ville bleue, est une petite ville située dans les montagnes du Rif, au nord du Maroc. Elle est célèbre pour ses ruelles étroites et ses maisons peintes en différentes nuances de bleu, ce qui en fait l’une des villes les plus photogéniques du pays. Fondée en 1471, Chefchaouen possède une médina calme et authentique, avec une forte influence andalouse et berbère. C’est aussi un lieu de détente, apprécié pour son atmosphère paisible, ses paysages de montagne, et son artisanat local, notamment les tissus et les objets en laine. Chefchaouen attire de nombreux touristes, marocains et étrangers, en quête de beauté, de calme et de culture."
+        },
+        Merzouga: {
+          name: "Merzouga",
+          img: "http://www.blogmaroc.fr/wp-content/uploads/2015/03/merzouga.jpg",
+          text: "Merzouga est un village situé dans le sud-est du Maroc, près des grandes dunes de sable de l’Erg Chebbi, dans le désert du Sahara. Ce lieu attire de nombreux touristes venus pour découvrir le désert, faire des balades à dos de dromadaire et passer des nuits inoubliables sous les étoiles dans des campements traditionnels. Merzouga est aussi un point de départ pour explorer les environs, comme les petits villages berbères et les paysages naturels du désert. Le climat est très chaud en été, mais les nuits peuvent être fraîches, surtout en hiver. C’est un endroit unique qui offre une expérience authentique du Sahara marocain."
+        },
+        Nador: {
+          name: "Nador",
+          img: "https://static.lematin.ma/files/lematin/images/articles/2021/08/552a3f4d1fc34431d8a6c8da7425f741.jpg",
+          text: "Nador est une ville située dans le nord-est du Maroc, proche de la mer Méditerranée et de la frontière avec l’Algérie. C’est une ville portuaire dynamique qui joue un rôle important dans le commerce et la pêche. Nador est entourée de belles plages et de paysages naturels, notamment le parc naturel de la lagune de Marchica, un site important pour la biodiversité. La ville combine modernité et traditions, avec une population principalement amazighe (berbère). Nador est aussi un point de passage vers les montagnes du Rif et offre une ambiance conviviale loin des grandes villes touristiques."
+        },
+        fes: {
+          name: "Fès",
+          img: "https://riad-layalina-fes.com/wp-content/uploads/vue-mosquee-quaraouiyine-fes-650x500.jpg",
+          text: "Fès est une des plus anciennes villes du Maroc et une ancienne capitale impériale. Située au nord du pays, elle est célèbre pour sa médina, l’une des plus grandes et des mieux préservées du monde. La médina de Fès, classée au patrimoine mondial de l’UNESCO, est un vrai labyrinthe de ruelles où l’on trouve des souks traditionnels, des mosquées historiques, des fontaines, et des universités anciennes comme l’université Al Quaraouiyine, considérée comme la plus vieille université au monde. Fès est aussi réputée pour son artisanat, notamment la fabrication de cuir et de poteries. C’est une ville où l’histoire et la culture marocaines sont particulièrement vivantes."
+        }
+      };
+
+      const c = cityData[city];
+      content.innerHTML = `
+        <h1>${c.name}</h1>
+        <img src="${c.img}" alt="${c.name}">
+        <p>${c.text}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
